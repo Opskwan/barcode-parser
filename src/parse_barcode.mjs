@@ -157,13 +157,8 @@ const parseGs1 = () => {
 
 const parseSimple = () => {
   product.type = 'simple';
-
-  consignment_lot['barcode_two'] = barcodeTwo;
-
-  // Catalog number
-  consignment_lot['product_number'] = barcodeOne;
-  consignment_lot['lot_number'] = barcodeTwo;
-  consignment_lot['expiry_date'] = null;
+  product.product_number = product.barcode_one;
+  product.lot_number = product.barcode_two;
 };
 
 export default function parse(barcodeOne, barcodeTwo) {
